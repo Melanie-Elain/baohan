@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bao Han | Full-stack Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Poppins', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-5xl mx-auto">
+        <header class="glass rounded-3xl p-8 mb-8 flex flex-col md:flex-row items-center gap-8">
+            <img src="./assets/images/30098458.jpg" alt="Bao Han" class="w-32 h-32 rounded-2xl object-cover border-4 border-sky-500 shadow-xl shadow-sky-500/20">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl font-bold mb-2">Hi, I'm <span class="gradient-text">Tran Bao Han</span> 👋</h1>
+                <p class="text-xl text-slate-400 mb-4 font-light">Full-stack Developer | Software Engineering Student</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                    <span class="px-3 py-1 bg-sky-500/10 text-sky-400 rounded-full text-sm border border-sky-500/20">NestJS</span>
+                    <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-sm border border-indigo-500/20">React</span>
+                    <span class="px-3 py-1 bg-green-500/10 text-green-400 rounded-full text-sm border border-green-500/20">Spring Boot</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-6">
+                <section class="glass rounded-3xl p-6">
+                    <h3 class="text-lg font-semibold mb-4 border-b border-slate-700 pb-2 text-sky-400">Contact Info</h3>
+                    <ul class="space-y-4 text-sm text-slate-300">
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope text-sky-500"></i> baohan.tbh0406@gmail.com</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-location-dot text-sky-500"></i> District 8, Ho Chi Minh City</li>
+                        <li class="flex items-center gap-3"><i class="fab fa-github text-sky-500"></i> github.com/Melanie-Elain</li>
+                    </ul>
+                </section>
+
+                <section class="glass rounded-3xl p-6">
+                    <h3 class="text-lg font-semibold mb-4 border-b border-slate-700 pb-2 text-sky-400">Education</h3>
+                    <div class="text-sm">
+                        <p class="font-medium">Saigon University</p>
+                        <p class="text-slate-400">Software Engineering (2022 - 2024)</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="md:col-span-2 space-y-8">
+                <h2 class="text-2xl font-bold flex items-center gap-3">
+                    <i class="fas fa-project-diagram text-sky-500"></i> Featured Projects
+                </h2>
+
+                <div class="glass rounded-3xl p-6 card-hover group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold group-hover:text-sky-400 transition-colors">S-Link: Event Management Platform</h3>
+                        <span class="text-xs bg-sky-500/20 text-sky-300 px-2 py-1 rounded">Thesis Project</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">A comprehensive system for managing school events, streamlining workflows for students and organizers.</p>
+                    <div class="flex gap-2">
+                        <code class="text-xs text-slate-500">#React</code> <code class="text-xs text-slate-500">#SpringBoot</code> <code class="text-xs text-slate-500">#Docker</code>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl p-6 card-hover group">
+                    <h3 class="text-xl font-bold mb-4 group-hover:text-sky-400 transition-colors">LMS Backend Architecture</h3>
+                    <p class="text-slate-400 text-sm mb-4">Developed high-performance backend modules for a Learning Management System focusing on scalability.</p>
+                    <div class="flex gap-2">
+                        <code class="text-xs text-slate-500">#NestJS</code> <code class="text-xs text-slate-500">#TypeScript</code> <code class="text-xs text-slate-500">#PostgreSQL</code>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl p-6 card-hover group">
+                    <h3 class="text-xl font-bold mb-4 group-hover:text-sky-400 transition-colors">VRP Solver (Genetic Algorithm)</h3>
+                    <p class="text-slate-400 text-sm mb-4">Solving the Vehicle Routing Problem with Time Windows using AI-driven optimization techniques.</p>
+                    <div class="flex gap-2">
+                        <code class="text-xs text-slate-500">#Algorithm</code> <code class="text-xs text-slate-500">#Python/Java</code> <code class="text-xs text-slate-500">#Optimization</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-12 py-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+            <p>© 2026 Tran Bao Han. Built with passion and Code.</p>
+        </footer>
+    </div>
+</body>
+</html>
