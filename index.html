@@ -3,88 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bao Han | Full-stack Developer Portfolio</title>
+    <title>Bao Han | Senior Full-stack Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #0f172a; color: #f8fafc; font-family: 'Poppins', sans-serif; }
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
         .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; border-color: #38bdf8; }
+        .tab-content { display: none; animation: fadeIn 0.5s ease; }
+        .tab-content.active { display: block; }
+        .nav-btn.active { color: #38bdf8; border-bottom: 2px solid #38bdf8; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="p-4 md:p-8">
-    <div class="max-w-5xl mx-auto">
-        <header class="glass rounded-3xl p-8 mb-8 flex flex-col md:flex-row items-center gap-8">
-            <img src="./assets/images/30098458.jpg" alt="Bao Han" class="w-32 h-32 rounded-2xl object-cover border-4 border-sky-500 shadow-xl shadow-sky-500/20">
-            <div class="text-center md:text-left">
-                <h1 class="text-4xl font-bold mb-2">Hi, I'm <span class="gradient-text">Tran Bao Han</span> 👋</h1>
-                <p class="text-xl text-slate-400 mb-4 font-light">Full-stack Developer | Software Engineering Student</p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-3">
-                    <span class="px-3 py-1 bg-sky-500/10 text-sky-400 rounded-full text-sm border border-sky-500/20">NestJS</span>
-                    <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-sm border border-indigo-500/20">React</span>
-                    <span class="px-3 py-1 bg-green-500/10 text-green-400 rounded-full text-sm border border-green-500/20">Spring Boot</span>
+    <div class="max-w-4xl mx-auto">
+        
+        <header class="glass rounded-3xl p-8 mb-6 text-center md:text-left flex flex-col md:flex-row items-center gap-6">
+            <img src="./assets/images/30098458.jpg" alt="Bao Han" class="w-24 h-24 rounded-2xl border-2 border-sky-500 shadow-lg shadow-sky-500/20">
+            <div>
+                <h1 class="text-3xl font-bold italic">Tran Bao Han</h1>
+                <p class="text-sky-400 font-medium">Senior Software Engineering Student | Full-stack Developer</p>
+                <div class="flex gap-4 mt-3 justify-center md:justify-start">
+                    <a href="mailto:baohan.tbh0406@gmail.com" class="hover:text-sky-400 transition text-xl"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/Melanie-Elain" target="_blank" class="hover:text-sky-400 transition text-xl"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="space-y-6">
-                <section class="glass rounded-3xl p-6">
-                    <h3 class="text-lg font-semibold mb-4 border-b border-slate-700 pb-2 text-sky-400">Contact Info</h3>
-                    <ul class="space-y-4 text-sm text-slate-300">
-                        <li class="flex items-center gap-3"><i class="fas fa-envelope text-sky-500"></i> baohan.tbh0406@gmail.com</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-location-dot text-sky-500"></i> District 8, Ho Chi Minh City</li>
-                        <li class="flex items-center gap-3"><i class="fab fa-github text-sky-500"></i> github.com/Melanie-Elain</li>
-                    </ul>
-                </section>
+        <nav class="glass rounded-2xl p-2 mb-8 flex justify-around sticky top-4 z-50">
+            <button onclick="openTab(event, 'about')" class="nav-btn px-6 py-2 font-medium transition active">About</button>
+            <button onclick="openTab(event, 'projects')" class="nav-btn px-6 py-2 font-medium transition">Projects</button>
+            <button onclick="openTab(event, 'skills')" class="nav-btn px-6 py-2 font-medium transition">Skills</button>
+        </nav>
 
-                <section class="glass rounded-3xl p-6">
-                    <h3 class="text-lg font-semibold mb-4 border-b border-slate-700 pb-2 text-sky-400">Education</h3>
-                    <div class="text-sm">
-                        <p class="font-medium">Saigon University</p>
-                        <p class="text-slate-400">Software Engineering (2022 - 2024)</p>
+        <main>
+            <section id="about" class="tab-content active glass rounded-3xl p-8 text-center">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Background</h2>
+                <p class="text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                    I am a <b>fourth-year student</b> at <b>Saigon University</b> specializing in Software Engineering. 
+                    With a strong foundation in the <b>JavaScript ecosystem (NestJS, React)</b> and <b>Java (Spring Boot)</b>, 
+                    I focus on building robust, scalable web applications and implementing complex algorithms to solve real-world problems.
+                </p>
+            </section>
+
+            <section id="projects" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    
+                    <a href="https://github.com/Melanie-Elain/booking-medical-spring" target="_blank" class="glass p-6 rounded-2xl hover:border-sky-500 transition-all group">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg group-hover:text-sky-400 transition-colors">Medical Booking System</h3>
+                            <i class="fas fa-external-link-alt text-xs text-slate-500"></i>
+                        </div>
+                        <p class="text-sm text-slate-400">An automated appointment scheduling platform for medical clinics built with Spring Boot and React.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="text-[10px] bg-slate-800 px-2 py-1 rounded text-sky-400">Spring Boot</span>
+                            <span class="text-[10px] bg-slate-800 px-2 py-1 rounded text-sky-400">MySQL</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Melanie-Elain/nest-lms-backend" target="_blank" class="glass p-6 rounded-2xl hover:border-sky-500 transition-all group">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg group-hover:text-sky-400 transition-colors">NestJS LMS Backend</h3>
+                            <i class="fas fa-external-link-alt text-xs text-slate-500"></i>
+                        </div>
+                        <p class="text-sm text-slate-400">A high-performance backend architecture for Learning Management Systems featuring secure authentication and course management.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="text-[10px] bg-slate-800 px-2 py-1 rounded text-sky-400">NestJS</span>
+                            <span class="text-[10px] bg-slate-800 px-2 py-1 rounded text-sky-400">TypeScript</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/trucpham04/XDPMTMHPL" target="_blank" class="glass p-6 rounded-2xl hover:border-sky-500 transition-all group">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg group-hover:text-sky-400 transition-colors">Social Media Platform</h3>
+                            <i class="fas fa-external-link-alt text-xs text-slate-500"></i>
+                        </div>
+                        <p class="text-sm text-slate-400">A social network clone featuring real-time interactions, post management, and user profiles.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="text-[10px] bg-slate-800 px-2 py-1 rounded text-sky-400">React</span>
+                            <span class="text-[10px] bg-slate-800 px-2 py-1 rounded text-sky-400">Modern Programming Course</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Melanie-Elain/source_code" target="_blank" class="glass p-6 rounded-2xl hover:border-sky-500 transition-all group">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-lg group-hover:text-sky-400 transition-colors">VRP Solver (AI)</h3>
+                            <i class="fas fa-external-link-alt text-xs text-slate-500"></i>
+                        </div>
+                        <p class="text-sm text-slate-400">Advanced implementation of Genetic Algorithms to solve the Vehicle Routing Problem with Time Windows (VRPTW).</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="text-[10px] bg-slate-800 px-2 py-1 rounded text-sky-400">Genetic Algorithm</span>
+                            <span class="text-[10px] bg-slate-800 px-2 py-1 rounded text-sky-400">Optimization</span>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+            <section id="skills" class="tab-content glass rounded-3xl p-8">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="text-center p-4 glass rounded-xl border-b-2 border-transparent hover:border-green-500 transition-all">
+                        <i class="fab fa-node-js text-3xl text-green-500 mb-2"></i>
+                        <p class="font-semibold text-sm">NestJS / Node.js</p>
                     </div>
-                </section>
-            </div>
-
-            <div class="md:col-span-2 space-y-8">
-                <h2 class="text-2xl font-bold flex items-center gap-3">
-                    <i class="fas fa-project-diagram text-sky-500"></i> Featured Projects
-                </h2>
-
-                <div class="glass rounded-3xl p-6 card-hover group">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-bold group-hover:text-sky-400 transition-colors">S-Link: Event Management Platform</h3>
-                        <span class="text-xs bg-sky-500/20 text-sky-300 px-2 py-1 rounded">Thesis Project</span>
+                    <div class="text-center p-4 glass rounded-xl border-b-2 border-transparent hover:border-sky-400 transition-all">
+                        <i class="fab fa-react text-3xl text-sky-400 mb-2"></i>
+                        <p class="font-semibold text-sm">React</p>
                     </div>
-                    <p class="text-slate-400 text-sm mb-4">A comprehensive system for managing school events, streamlining workflows for students and organizers.</p>
-                    <div class="flex gap-2">
-                        <code class="text-xs text-slate-500">#React</code> <code class="text-xs text-slate-500">#SpringBoot</code> <code class="text-xs text-slate-500">#Docker</code>
+                    <div class="text-center p-4 glass rounded-xl border-b-2 border-transparent hover:border-blue-400 transition-all">
+                        <i class="fab fa-docker text-3xl text-blue-400 mb-2"></i>
+                        <p class="font-semibold text-sm">Docker</p>
+                    </div>
+                    <div class="text-center p-4 glass rounded-xl border-b-2 border-transparent hover:border-orange-500 transition-all">
+                        <i class="fab fa-java text-3xl text-orange-500 mb-2"></i>
+                        <p class="font-semibold text-sm">Spring Boot</p>
+                    </div>
+                    <div class="text-center p-4 glass rounded-xl border-b-2 border-transparent hover:border-indigo-400 transition-all">
+                        <i class="fas fa-database text-3xl text-indigo-400 mb-2"></i>
+                        <p class="font-semibold text-sm">PostgreSQL / MySQL</p>
+                    </div>
+                    <div class="text-center p-4 glass rounded-xl border-b-2 border-transparent hover:border-pink-500 transition-all">
+                        <i class="fas fa-brain text-3xl text-pink-500 mb-2"></i>
+                        <p class="font-semibold text-sm">Genetic Algo</p>
                     </div>
                 </div>
+            </section>
+        </main>
 
-                <div class="glass rounded-3xl p-6 card-hover group">
-                    <h3 class="text-xl font-bold mb-4 group-hover:text-sky-400 transition-colors">LMS Backend Architecture</h3>
-                    <p class="text-slate-400 text-sm mb-4">Developed high-performance backend modules for a Learning Management System focusing on scalability.</p>
-                    <div class="flex gap-2">
-                        <code class="text-xs text-slate-500">#NestJS</code> <code class="text-xs text-slate-500">#TypeScript</code> <code class="text-xs text-slate-500">#PostgreSQL</code>
-                    </div>
-                </div>
-
-                <div class="glass rounded-3xl p-6 card-hover group">
-                    <h3 class="text-xl font-bold mb-4 group-hover:text-sky-400 transition-colors">VRP Solver (Genetic Algorithm)</h3>
-                    <p class="text-slate-400 text-sm mb-4">Solving the Vehicle Routing Problem with Time Windows using AI-driven optimization techniques.</p>
-                    <div class="flex gap-2">
-                        <code class="text-xs text-slate-500">#Algorithm</code> <code class="text-xs text-slate-500">#Python/Java</code> <code class="text-xs text-slate-500">#Optimization</code>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer class="mt-12 py-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-            <p>© 2026 Tran Bao Han. Built with passion and Code.</p>
+        <footer class="mt-12 mb-8 text-center text-slate-500 text-xs italic">
+            <p>© 2026 Tran Bao Han. All Rights Reserved.</p>
         </footer>
     </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, navbtns;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            navbtns = document.getElementsByClassName("nav-btn");
+            for (i = 0; i < navbtns.length; i++) {
+                navbtns[i].className = navbtns[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </body>
 </html>
